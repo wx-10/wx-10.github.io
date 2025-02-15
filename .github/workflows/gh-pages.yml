@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]  # 触发条件：当 main 分支有推送时
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # 如果使用了主题作为子模块，需要启用
+
+      # 2. 设置 Hugo 环境
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'  # 使用最新版 Hugo
+          extended: true  # 使用扩展版 Hugo（支持 SCSS/SASS）
+
+      # 3. 构建静态文件
+      - name: Build
+        run: hugo --minify  # 生成静态文件并压缩
+
+      # 4. 部署到 GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 提供的 token
+          publish_dir: ./public  # 指定 Hugo 生成的静态文件目录
+          publish_branch: main  # 部署到 main 分支（或 gh-pages 分支）
