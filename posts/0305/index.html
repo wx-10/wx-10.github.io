@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -14,12 +14,12 @@
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.1401ef984fbd34cc99d73cb14349afe50f87a9fea1ad7628ad85a56b7983443f.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
@@ -34,10 +34,10 @@
     
 
     
-      <link rel="canonical" href="https://wx-10.github.io/posts/0305/">
+      <link rel="canonical" href="http://localhost:1313/posts/0305/">
     
 
-    <meta property="og:url" content="https://wx-10.github.io/posts/0305/">
+    <meta property="og:url" content="http://localhost:1313/posts/0305/">
   <meta property="og:site_name" content="WX&#39;s Blog">
   <meta property="og:title" content="C语言中的无符号整数与补码">
   <meta property="og:description" content="-1竟然会比正整数大！INT_MIN的绝对值竟然等于它本身！
@@ -56,17 +56,15 @@
 这究竟是…，还是…？">
   <meta itemprop="datePublished" content="2025-03-04T21:13:00+08:00">
   <meta itemprop="dateModified" content="2025-03-04T21:13:00+08:00">
-  <meta itemprop="wordCount" content="205">
+  <meta itemprop="wordCount" content="199">
   <meta itemprop="keywords" content="补码,C,无符号整数">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="C语言中的无符号整数与补码">
   <meta name="twitter:description" content="-1竟然会比正整数大！INT_MIN的绝对值竟然等于它本身！
 这究竟是…，还是…？">
 
-      
-    
 	
-  </head><body class="ma0 avenir bg-near-white production">
+  </head><body class="ma0 avenir bg-near-white development">
 
     
    
@@ -154,21 +152,10 @@
 <h3 id="类型转换优先级">类型转换优先级：</h3>
 <ol>
 <li>
-<p>整型提升规则：</p>
-<ul>
-<li>如果两个操作数类型不同，先进行整型提升</li>
-<li>有符号与无符号的等级比较：
-<ul>
-<li>若无符号类型级别 ≥ 有符号类型，则有符号转换为无符号</li>
-<li>否则：
-<ul>
-<li>若无符号类型值范围包含有符号类型，则转换到有符号类型</li>
-<li>否则转换到无符号类型</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>优先级:
+<img src="/priority.png" alt="优先级">
+算术运算式中，低类型能够转换为高类型。
+所谓高低，是指表示的范围大小。通常和内存默认分配的存储空间大小及有无符号位有关。</p>
 </li>
 <li>
 <p>比较过程分解：</p>
@@ -299,7 +286,7 @@ abs(-8) → 数学上应为8
 <li>C++之父Bjarne Stroustrup的观点：
 &ldquo;无符号类型的设计初衷是为了表示非负值（如数组索引），但在实际使用中，它们可能会引入复杂的边界条件和错误。因此在使用无符号类型时要格外小心，避免因类型转换或溢出引发的问题&rdquo;</li>
 </ul>
-<p>所以建议没有必要原因尽量不用使用unsigned，因为有它在的运算，很多时候会产生非直观的错误，难以发现。要使用的话，则尽量避免有符号数与无符号数的比较运算和避免减法运算，因为很多时候，在unsigned的世界里，x-y&gt;0与x&gt;y都是不等价的。</p>
+<p>所以没有必要原因尽量不使用unsigned，因为有它在的运算，很多时候会产生非直观的错误，难以发现。要使用的话，则尽量避免有符号数与无符号数的比较运算和避免减法运算，因为很多时候，在unsigned的世界里，x-y&gt;0与x&gt;y都是不等价的。</p>
 <h2 id="四小测试">四、小测试</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>;
@@ -349,7 +336,7 @@ abs(-8) → 数学上应为8
     </main>
     <footer class="bg-light-blue bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://wx-10.github.io/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
     &copy;  WX's Blog 2025 
   </a>
     <div><div class="ananke-socials"></div>

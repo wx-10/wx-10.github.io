@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on WX&#39;s Blog</title>
-    <link>https://wx-10.github.io/tags/c/</link>
+    <link>http://localhost:1313/tags/c/</link>
     <description>Recent content in C on WX&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 04 Mar 2025 21:13:00 +0800</lastBuildDate>
-    <atom:link href="https://wx-10.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C语言中的无符号整数与补码</title>
-      <link>https://wx-10.github.io/posts/0305/</link>
+      <link>http://localhost:1313/posts/0305/</link>
       <pubDate>Tue, 04 Mar 2025 21:13:00 +0800</pubDate>
-      <guid>https://wx-10.github.io/posts/0305/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;-1竟然会比正整数大！INT_MIN的绝对值竟然等于它本身！&lt;br&gt;&#xA;这究竟是…，还是…？&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://wx-10.github.io/curious.png&#34; alt=&#34;我很好奇&#34;&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/0305/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;-1竟然会比正整数大！INT_MIN的绝对值竟然等于它本身！&lt;br&gt;&#xA;这究竟是…，还是…？&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/curious.png&#34; alt=&#34;我很好奇&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
